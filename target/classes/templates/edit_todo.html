@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<title>Edit Product</title>
+</head>
+<body>
+<nav role="navigation" class="navbar navbar-default">
+	<div class="">
+		<a href="http://localhost:8080" class="navbar-brand">Spring MVC Example</a>
+	</div>
+	<div class="navbar-collapse">
+		<ul class="nav navbar-nav">
+		<li class="active"><a href="/login">Home</a></li>
+			<li><a href="/index">My Todos</a></li>
+
+		</ul>		
+	</div>
+</nav>
+<div class="container">
+		<h1>Edit Todo</h1>
+		<br />
+		<form action="#" th:action="@{/save}" th:object="${todo}"
+			method="post">
+				
+					ID:<br>
+				    <input type="text" th:field="*{id}" readonly="readonly" /><br>		
+					Name:<br>	
+					<input type="text" th:field="*{name}" /><br>	
+					Description:<br>	
+					<textarea th:field="*{description}" rows="5" cols="22"></textarea><br>	
+                    Start Date:<br>	
+					<input type="date" th:field="*{startDate}" /><br>					
+					Target Date<br>
+					<input type="date" th:field="*{targetDate}" /><br><br>	
+						
+												
+					<button type="submit" class="btn btn-success" >Save</button> 
+				
+
+		</form>
+</div>		
+</body>
+</html>
